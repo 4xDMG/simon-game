@@ -26,10 +26,11 @@ $(document).ready(function() {
 	var playbackCount = 0;
 	var playbackInProgress = false;
 	var strictMode = false;
+	var clickDisabled = false;
 	
 	//Code to start game running
 	$("#startBtn").click(function() {
-		if ($("#powerBtnToggle").hasClass("powerBtnOn") && gameInProgress == false) {
+		if ($("#powerBtnToggle").hasClass("powerBtnOn") && gameInProgress === false) {
 			moveSelection();
 			movesMadePlayback();
 			gameInProgress = true;
@@ -37,8 +38,9 @@ $(document).ready(function() {
 	});
 	
 	//Handles click events for colored game buttons
-	$('.gameBtn').click(function() {
-		if (gameInProgress && playbackInProgress == false) {
+	$('.gameBtn').click(function(event) {
+		if (gameInProgress && playbackInProgress === false && clickDisabled === false) {
+			clickDisabled = true;
 			var currentBtn = event.target.id;
 			if (movesMadeArray[moveCounter] == currentBtn) {
 				btnPush(currentBtn);
@@ -70,7 +72,7 @@ $(document).ready(function() {
 					moveSelection();
 					movesMadePlayback();
 				}, 800);
-			}			
+			}
 		} 		
 	});
 	
@@ -88,8 +90,9 @@ $(document).ready(function() {
 				playbackCount = 0;
 				playbackInProgress = false;
 			}
-		}, 1000)
-	};
+			clickDisabled = false;
+		}, 1000);
+	}
 	
 	//Select a random move to add to the movesMadeArray
 	function moveSelection() {
@@ -116,6 +119,7 @@ $(document).ready(function() {
 		playAudio(audioId);
 		setTimeout(function() {
 			$(currentId).removeClass(currentClass);
+			clickDisabled = false;
 		}, 600);
 	}
 	
@@ -156,10 +160,10 @@ $(document).ready(function() {
 	
 	//Enables or disables strict mode
 	$("#strictBtn").click(function() {
-		if ($("#powerBtnToggle").hasClass("powerBtnOn") && strictMode == false) {
+		if ($("#powerBtnToggle").hasClass("powerBtnOn") && strictMode === false) {
 			strictMode = true;
 			$("#strictIndicator").addClass("strictIndicatorActive");
-		} else if ($("#powerBtnToggle").hasClass("powerBtnOn") && strictMode == true){
+		} else if ($("#powerBtnToggle").hasClass("powerBtnOn") && strictMode === true){
 			strictMode = false;
 			$("#strictIndicator").removeClass("strictIndicatorActive");
 		}
