@@ -1,0 +1,64 @@
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Simon</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/simon-css.css">
+    
+</head>
+
+<body>
+    
+    <div class='container'>
+    
+	<h3><a href='https://github.com/4xDMG/freeCodeCamp/tree/master/Front-End-Development-Projects/Simon-Game' target=_blank>See source code on GitHub</a></h3>
+	
+	<div id='simon'>
+	
+		<div id='simon-control'>
+		
+			<h1 id='logo'>Simon<span id='registered-TM'>®</span></h1>
+			<div id='counterDisplay'>
+				<span id='counterText'></span>
+			</div>
+			<p id='counter-label' class='simon-labels'>COUNT</p>
+			<div id='startBtn'></div>
+			<p id='start-label' class='simon-labels'>START</p>
+			<div id='strictIndicator'></div>
+			<div id='strictBtn'></div>
+			<p id='strict-label' class='simon-labels'>STRICT</p>
+			<div id='powerBtn'>
+				<div id='powerBtnToggle' class='powerBtnOff'></div>
+			</div>
+			<p id='off-label' class='simon-labels'>OFF</p>
+			<p id='on-label' class='simon-labels'>ON</p>
+	
+		</div>
+		
+		<div id ='redBtn' class='gameBtn'></div>
+		<div id='blueBtn' class='gameBtn'></div>
+		<div id='greenBtn' class='gameBtn'></div>
+		<div id='yellowBtn' class='gameBtn'></div>
+	
+	</div>
+    
+    </div>
+	
+	<audio id='redBtnAudio' src='https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'></audio>
+	<audio id='blueBtnAudio' src='https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'></audio>
+	<audio id='greenBtnAudio' src='https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'></audio>
+	<audio id='yellowBtnAudio' src='https://s3.amazonaws.com/freecodecamp/simonSound4.mp3'></audio>
+    
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="js/simon-js.js"></script>
+	
+</body>
+    
+</html>
+    
